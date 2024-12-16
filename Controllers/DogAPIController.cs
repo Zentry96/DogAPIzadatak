@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DogAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,7 +9,7 @@ namespace DogAPI.Controllers
     [ApiController]
     public class DogAPIController : ControllerBase
     {
-        [HttpGet("")]
+        [HttpGet]
         public async Task<IActionResult> GetList()
         {
             HttpClient client = new HttpClient();
@@ -23,5 +24,14 @@ namespace DogAPI.Controllers
 
             return BadRequest();
         }
+
+
+        /*
+        [HttpPost]
+        public async Task<ActionResult<Terrier>> PostTerrier()
+        {
+
+        }
+         */
     }
 }
